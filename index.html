@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Requirements</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef3f8;color:#17202a;font-family:Arial,"Noto Sans Bengali",sans-serif}
+.container{max-width:720px;margin:auto;padding:16px}
+.header{background:linear-gradient(135deg,#123b63,#1769aa);color:#fff;padding:24px 20px;border-radius:18px;box-shadow:0 8px 25px #0002}
+.header h1{margin:0 0 6px;font-size:27px}
+.header p{margin:0;opacity:.9}
+.search{width:100%;margin:16px 0;padding:14px 16px;border:1px solid #d5dde6;border-radius:12px;font-size:16px;outline:none}
+.section{background:#fff;margin:16px 0;padding:18px;border-radius:16px;box-shadow:0 5px 18px #0001}
+.section h2{margin:0 0 14px;color:#123b63;font-size:21px;border-bottom:2px solid #edf1f5;padding-bottom:10px}
+ul{list-style:none;margin:0;padding:0}
+li{display:flex;gap:11px;align-items:flex-start;padding:12px 5px;border-bottom:1px solid #edf0f3;font-size:16px}
+li:last-child{border-bottom:0}
+.check{min-width:26px;height:26px;border-radius:50%;background:#e7f7ed;color:#159447;display:flex;align-items:center;justify-content:center;font-weight:bold}
+.note{background:#fff7e6;border-left:4px solid #f0a000;padding:13px;border-radius:8px;font-size:14px}
+.hidden{display:none}
+.footer{text-align:center;color:#687386;font-size:12px;margin:20px}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1>📄 Document Requirements</h1>
+<p>বিভিন্ন কাজের জন্য প্রয়োজনীয় কাগজপত্র</p>
+</header>
+
+<input id="search" class="search" type="search" placeholder="🔍 কাগজ বা কাজের নাম খুঁজুন...">
+
+<section class="section searchable">
+<h2>1. BDO Income Certificate</h2>
+<ul>
+<li><span class="check">✓</span><span>আধার কার্ড</span></li>
+<li><span class="check">✓</span><span>ছবি</span></li>
+<li><span class="check">✓</span><span>গ্রাম পঞ্চায়েতের Income Certificate</span></li>
+<li><span class="check">✓</span><span>বাবার Voter Card</span></li>
+</ul>
+</section>
+
+<section class="section searchable">
+<h2>2. SVMCM Scholarship</h2>
+<ul>
+<li><span class="check">✓</span><span>Voter Card</span></li>
+<li><span class="check">✓</span><span>Ration Card</span></li>
+<li><span class="check">✓</span><span>Admission Receipt</span></li>
+<li><span class="check">✓</span><span>Marksheet</span></li>
+</ul>
+</section>
+
+<section class="section searchable">
+<h2>3. New PAN Card Application</h2>
+<ul>
+<li><span class="check">✓</span><span>ছবি</span></li>
+<li><span class="check">✓</span><span>Sign / স্বাক্ষর</span></li>
+<li><span class="check">✓</span><span>Aadhaar Card</span></li>
+<li><span class="check">✓</span><span>Matriculation Certificate</span></li>
+<li><span class="check">✓</span><span>Local Residence (Domicile) Certificate</span></li>
+</ul>
+</section>
+
+<section class="section searchable">
+<h2>4. Land Record / Residential Documents</h2>
+<ul>
+<li><span class="check">✓</span><span>Land Record Required ***</span></li>
+<li><span class="check">✓</span><span>Ration Card</span></li>
+<li><span class="check">✓</span><span>Aadhaar Card</span></li>
+<li><span class="check">✓</span><span>ছবি</span></li>
+<li><span class="check">✓</span><span>Gram Panchayat Residential Certificate ***</span></li>
+<li><span class="check">✓</span><span>Birth Certificate</span></li>
+</ul>
+</section>
+
+<section class="section searchable">
+<h2>5. For New Voter Card</h2>
+<ul>
+<li><span class="check">✓</span><span>Board Certificate</span></li>
+<li><span class="check">✓</span><span>Aadhaar Card</span></li>
+<li><span class="check">✓</span><span>Photo</span></li>
+<li><span class="check">✓</span><span>House No.</span></li>
+<li><span class="check">✓</span><span>BLO-কে কাগজ জমা দিতে হবে</span></li>
+</ul>
+</section>
+
+<div class="note">⚠️ অফিস/আবেদন অনুযায়ী অতিরিক্ত কাগজপত্র লাগতে পারে। জমা দেওয়ার আগে সংশ্লিষ্ট অফিস বা পোর্টালের নির্দেশনা দেখে নিন।</div>
+<div class="footer">Document Requirements App</div>
+</div>
+
+<script>
+const search=document.getElementById("search");
+const sections=document.querySelectorAll(".searchable");
+search.addEventListener("input",()=>{
+  const q=search.value.toLowerCase().trim();
+  sections.forEach(section=>{
+    section.classList.toggle("hidden", q && !section.innerText.toLowerCase().includes(q));
+  });
+});
+</script>
+</body>
+</html>
